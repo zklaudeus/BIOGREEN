@@ -1,0 +1,47 @@
+---
+// src/components/Services.astro
+const services = [
+  {
+    title: "Recepción de Residuos",
+    desc: "Aceptamos residuos orgánicos no peligrosos de diversas fuentes, asegurando un proceso seguro.",
+    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+  },
+  {
+    title: "Compostaje Controlado",
+    desc: "Proceso totalmente autorizado y sustentable para crear abono de alta calidad que retorna a la tierra.",
+    icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+  },
+  {
+    title: "Certificados de Disposición",
+    desc: "Emitimos la documentación necesaria asegurando total trazabilidad para tu gestión de residuos.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    title: "Soluciones para Empresas",
+    desc: "Apoyo especializado para la agroindustria, viveros, casinos, municipios y paisajismo.",
+    icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+  }
+];
+---
+<section id="servicios" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <h2 class="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Nuestros Servicios</h2>
+    <p class="text-xl text-gray-600 mb-16 max-w-2xl mx-auto">
+      En BIOGREEN te ayudamos a gestionar tus materiales con seguridad y trazabilidad.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map(service => (
+        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col items-center group">
+          <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mb-6 border border-emerald-100 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={service.icon}></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+          <p class="text-gray-600 leading-relaxed text-sm">{service.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

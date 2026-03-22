@@ -1,8 +1,10 @@
 # build output
 dist/
+dist-ssr/
 
-# generated types
+# generated types & cache
 .astro/
+.cache/
 
 # dependencies
 node_modules/
@@ -13,12 +15,33 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# environment variables (CRÍTICO PARA SEGURIDAD)
 .env
-.env.production
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Deployment / Hosting
+.vercel/
+.netlify/
+.serverless/
+build/
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# IDEs and Editors
 .idea/
+.vscode/
+*.swp
+*.swo
+
+# Credentials and Keys
+*.pem
+*.crt
+*.key
+credentials.json
+client_secret.json

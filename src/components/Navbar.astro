@@ -1,0 +1,174 @@
+---
+// src/components/Navbar.astro
+const links = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Nosotros', href: '#nosotros' },
+  { name: 'Servicios', href: '#servicios' },
+  { name: 'Impacto', href: '#impacto' },
+  { name: 'Contacto', href: '#contacto' },
+];
+---
+
+<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center relative z-50">
+      
+      <!-- Logo alineado a la izquierda -->
+      <a href="/" class="text-3xl font-black tracking-tight uppercase text-emerald-400">
+        BIOGREEN
+      </a>
+
+      <!-- Menú a la derecha (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        {links.map(link => (
+          <a 
+            href={link.href} 
+            class="nav-link relative text-sm font-medium transition-colors duration-300"
+          >
+            {link.name}
+            <!-- Hover Underline Animado -->
+            <span class="nav-indicator absolute left-0 -bottom-1 w-0 h-[2px] transition-all duration-300"></span>
+          </a>
+        ))}
+      </nav>
+
+      <!-- Botón Menú Hamburguesa (Mobile) -->
+      <button 
+        id="menu-toggle" 
+        class="md:hidden flex flex-col items-center justify-center w-8 h-8 gap-[5px] focus:outline-none"
+        aria-label="Toggle Menu"
+      >
+        <span class="line-1 w-6 h-[2px] bg-current transition-transform duration-300 ease-in-out"></span>
+        <span class="line-2 w-6 h-[2px] bg-current transition-opacity duration-300 ease-in-out"></span>
+        <span class="line-3 w-6 h-[2px] bg-current transition-transform duration-300 ease-in-out"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Menú Desplegable (Mobile) -->
+  <div 
+    id="mobile-menu" 
+    class="absolute top-0 left-0 w-full bg-white text-gray-900 shadow-xl overflow-hidden transition-all duration-500 ease-in-out z-40 max-h-0 opacity-0"
+  >
+    <div class="pt-24 pb-8 px-6 flex flex-col space-y-4 text-center text-lg font-medium">
+      {links.map(link => (
+        <a 
+          href={link.href} 
+          class="mobile-nav-link text-gray-600 transition-colors duration-300"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<style>
+  /* ====== Estado Inicial (Top) ====== */
+  #navbar {
+    background-color: transparent;
+    --hover-color: #34d399; /* Verde esmeralda claro (para fondos oscuros) */
+    --indicator-color: #34d399;
+  }
+
+  /* ====== Estado con Scroll ====== */
+  #navbar.is-scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    color: #1f2937; /* Gris oscuro para el texto */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    --hover-color: #10b981; /* Verde esmeralda estándar */
+    --indicator-color: #10b981;
+  }
+  
+  /* ====== Estado Menú Móvil Abierto ====== */
+  #navbar.menu-open {
+    color: #1f2937; /* Forzar logo e icono oscuro para que contraste en bg-white */
+    --hover-color: #10b981;
+  }
+  
+  #navbar.menu-open #mobile-menu {
+    max-height: 400px; /* Suficiente para los links */
+    opacity: 1;
+  }
+
+  /* ====== Animaciones de Hover Links ====== */
+  .nav-link:hover {
+    color: var(--hover-color);
+  }
+  
+  .nav-link .nav-indicator {
+    background-color: var(--indicator-color);
+  }
+  
+  .nav-link:hover .nav-indicator {
+    width: 100%;
+  }
+
+  .mobile-nav-link:hover {
+    color: #10b981;
+  }
+
+  /* ====== Animaciones Botón Hamburguesa ====== */
+  #navbar.menu-open .line-1 {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #navbar.menu-open .line-2 {
+    opacity: 0;
+  }
+  #navbar.menu-open .line-3 {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  // El script de Astro maneja las interacciones del cliente
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    let isMenuOpen = false;
+
+    // Manejar el efecto scroll
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('is-scrolled');
+      } else {
+        navbar.classList.remove('is-scrolled');
+      }
+    };
+
+    // Manejar toggle menú móvil
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        navbar.classList.add('menu-open');
+        document.body.style.overflow = 'hidden'; // Bloquea scroll en la página al abrir menú
+      } else {
+        navbar.classList.remove('menu-open');
+        document.body.style.overflow = ''; // Restaura scroll
+      }
+    };
+
+    // Listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    // Cerrar menú móvil al hacer click en cualquier link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+
+    // Validar en la carga inicial
+    handleScroll();
+  });
+</script>
