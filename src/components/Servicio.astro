@@ -1,0 +1,69 @@
+---
+// src/components/Servicio.astro
+const residuos = [
+  { texto: "Lodos orgánicos de efluentes y procesos industriales.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>` },
+  { texto: "Desechos agroindustriales (frutas, verduras, cáscaras, pulpas, bagazo).", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>` },
+  { texto: "Residuos de panadería y casinos industriales.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0 2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0 2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0V8.5a5 5 0 0110 0v5.546"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20h18"/></svg>` },
+  { texto: "Residuos forestales (corteza, ramas, hojas, viruta, serrín).", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>` },
+  { texto: "Rechazos de clasificación, dregs, grits, cal.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>` },
+  { texto: "Cenizas y arenas de calderas de biomasa.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>` },
+  { texto: "Levadura residual, orujo de uva, orujo de aceituna.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>` },
+  { texto: "Podas y restos vegetales urbanos.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>` },
+];
+---
+
+<section id="residuos-autorizados" class="py-24 bg-white relative overflow-hidden">
+  <!-- Decorativo fondo -->
+  <div class="absolute -right-20 top-1/4 w-80 h-80 bg-emerald-50 rounded-full filter blur-3xl opacity-60 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col lg:flex-row items-start gap-16 lg:gap-20">
+
+      <!-- Columna izquierda: Texto explicativo -->
+      <div class="w-full lg:w-5/12 lg:sticky lg:top-28">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold tracking-wide mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Planta Autorizada
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+          Residuos<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-500">Autorizados</span>
+        </h2>
+
+        <p class="text-lg text-gray-500 leading-relaxed font-light mb-8">
+          Contamos con autorización para recepcionar una amplia gama de residuos orgánicos no peligrosos compatibles con el proceso de compostaje industrial.
+        </p>
+
+        <!-- Nota legal -->
+        <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-2xl p-6">
+          <p class="text-sm text-emerald-900 font-light leading-relaxed">
+            <span class="font-semibold">Importante:</span> Todos los residuos recepcionados deben ser orgánicos, no peligrosos y compatibles con el proceso de compostaje. El manejo se realiza conforme al <span class="font-semibold">Manual de Procedimientos autorizado.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Lista de residuos -->
+      <div class="w-full lg:w-7/12">
+        <ul class="space-y-4">
+          {residuos.map((item, i) => (
+            <li class="group flex items-start gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg hover:-translate-x-1 hover:border-emerald-200 transition-all duration-300">
+              <!-- Número + Ícono -->
+              <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                <Fragment set:html={item.icon} />
+              </div>
+              <!-- Texto -->
+              <div class="flex flex-col justify-center">
+                <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">#{String(i + 1).padStart(2, '0')}</span>
+                <p class="text-gray-800 font-medium leading-snug">{item.texto}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

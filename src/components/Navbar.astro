@@ -1,22 +1,25 @@
 ---
 // src/components/Navbar.astro
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '/index.html' || pathname === '';
+
 const links = [
-  { name: 'Inicio', href: '#inicio' },
-  { name: 'Nosotros', href: '#nosotros' },
-  { name: 'Servicios', href: '#servicios' },
-  { name: 'Impacto', href: '#impacto' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Inicio', href: '/' },
+  { name: 'Nosotros', href: '/nosotros' },
+  { name: 'Servicios', href: '/servicios' },
+  { name: 'Impacto', href: '/impacto' },
+  { name: 'Contacto', href: '/contacto' },
 ];
 ---
 
-<header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6 text-white">
+<header id="navbar" data-ishome={isHome.toString()} class={`fixed w-full top-0 z-50 transition-all duration-300 py-6 ${isHome ? 'text-white' : 'text-gray-900'}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center relative z-50">
       
       <!-- Logo alineado a la izquierda -->
-      <a href="/" class="text-3xl font-black tracking-tight uppercase text-emerald-400">
-        BIOGREEN
-      </a>
+      <a href="/" class="flex items-center">
+  <img src="/src/assets/logo-biogreen.png" alt="BIOGREEN" class="h-20 object-contain" />
+</a>
 
       <!-- Menú a la derecha (Desktop) -->
       <nav class="hidden md:flex space-x-8">
@@ -70,6 +73,12 @@ const links = [
     background-color: transparent;
     --hover-color: #34d399; /* Verde esmeralda claro (para fondos oscuros) */
     --indicator-color: #34d399;
+  }
+  
+  /* Para páginas que no son de inicio, el color de hover inicial debe ser distinto para que se vea sobre fondos claros */
+  #navbar[data-ishome="false"]:not(.is-scrolled) {
+    --hover-color: #10b981;
+    --indicator-color: #10b981;
   }
 
   /* ====== Estado con Scroll ====== */
@@ -128,6 +137,8 @@ const links = [
   // El script de Astro maneja las interacciones del cliente
   document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
     const menuToggle = document.getElementById('menu-toggle');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     
