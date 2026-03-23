@@ -2,6 +2,7 @@
 // src/layouts/Layout.astro
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title?: string;
@@ -24,5 +25,6 @@ const { title = "EcoClean - Cuidamos el planeta" } = Astro.props;
     <slot />
 
     <Footer />
+    <SpeedInsights />
   </body>
 </html>
