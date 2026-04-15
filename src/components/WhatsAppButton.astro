@@ -9,7 +9,7 @@ const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="whatsapp-btn fixed bottom-5 right-5 sm:bottom-8 sm:right-8 flex items-center justify-center p-3 sm:p-4 rounded-full bg-[#25D366] text-white shadow-lg focus:outline-none focus:ring-4 focus:ring-[#25D366]/50 transition-transform duration-300 z-50 group hover:-translate-y-1 hover:shadow-xl"
+  class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-[#128C7E] hover:scale-110 hover:-translate-y-1 transition-all duration-300 group whatsapp-btn flex items-center justify-center"
   aria-label="Escríbenos por WhatsApp"
 >
   <!-- Icono de WhatsApp -->
@@ -25,7 +25,7 @@ const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   </svg>
   
   <!-- Tooltip (Oculto en móviles, visible en desktop al hacer hover) -->
-  <span class="absolute right-[115%] bg-white text-gray-800 text-sm font-semibold py-2 px-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:-translate-x-2 whitespace-nowrap hidden sm:block border border-gray-100">
+  <span class="absolute right-[115%] bg-gris-claro text-verde-oscuro text-sm font-semibold py-2 px-3 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:-translate-x-2 whitespace-nowrap hidden sm:block border border-verde-oscuro/20">
     Escríbenos por WhatsApp
   </span>
 </a>

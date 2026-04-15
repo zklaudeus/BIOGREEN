@@ -34,42 +34,42 @@ const valores = [
 ];
 ---
 
-<section id="valores" class="py-24 bg-white relative overflow-hidden">
+<section id="valores" class="py-24 bg-gris-claro relative overflow-hidden">
   <!-- Decorativo -->
-  <div class="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-emerald-500 to-transparent"></div>
-  <div class="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-emerald-500 to-transparent"></div>
+  <div class="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-verde-oscuro to-transparent"></div>
+  <div class="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-verde-oscuro to-transparent"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Encabezado -->
     <div class="text-center mb-16">
-      <h2 class="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-3">Lo que nos define</h2>
-      <h3 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight mb-5">Nuestros Valores</h3>
-      <div class="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
+      <h2 class="subtitulo text-sm font-bold text-verde mb-3">Lo que nos define</h2>
+      <h3 class="text-4xl md:text-5xl font-black text-verde-oscuro tracking-tight mb-5">Nuestros Valores</h3>
+      <div class="w-24 h-1.5 bg-verde mx-auto rounded-full"></div>
     </div>
 
     <!-- Grid de 3 columnas con 6 valores -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {valores.map((valor, i) => (
-        <div class="group relative flex flex-col items-start p-8 rounded-3xl border border-gray-100 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+        <div class="group relative flex flex-col items-start p-8 rounded-3xl border border-verde-oscuro/20 bg-gris-claro shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
           <!-- Decorative corner blob -->
-          <div class="absolute top-0 right-0 w-20 h-20 bg-emerald-50 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          <div class="absolute top-0 right-0 w-20 h-20 bg-gris-claro rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
           <!-- Número de orden -->
-          <span class="absolute top-6 right-7 text-4xl font-black text-gray-50 group-hover:text-emerald-50 transition-colors select-none leading-none">
+          <span class="absolute top-6 right-7 text-4xl font-black text-gray-50 group-hover:text-gris-claro transition-colors select-none leading-none">
             {String(i + 1).padStart(2, '0')}
           </span>
 
           <!-- Ícono -->
-          <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+          <div class="w-16 h-16 bg-gris-claro text-verde rounded-2xl flex items-center justify-center mb-6 group-hover:bg-verde group-hover:text-gris-claro transition-all duration-300 shadow-sm">
             <Fragment set:html={valor.icon} />
           </div>
 
           <!-- Contenido -->
-          <h4 class="text-xl font-black text-gray-900 mb-3 tracking-tight uppercase">{valor.nombre}</h4>
+          <h4 class="text-xl font-black text-verde-oscuro mb-3 tracking-tight uppercase">{valor.nombre}</h4>
           <p class="text-gray-500 leading-relaxed font-light">{valor.descripcion}</p>
 
           <!-- Línea decorativa inferior -->
-          <div class="w-0 h-0.5 bg-emerald-500 mt-6 rounded-full transition-all duration-500 group-hover:w-12"></div>
+          <div class="w-0 h-0.5 bg-verde mt-6 rounded-full transition-all duration-500 group-hover:w-12"></div>
         </div>
       ))}
     </div>

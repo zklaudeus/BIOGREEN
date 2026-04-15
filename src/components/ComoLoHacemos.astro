@@ -6,9 +6,9 @@ const pasos = [
     titulo: "Residuos Orgánicos",
     descripcion: "Recolectamos residuos orgánicos industriales, agroindustriales y forestales en origen.",
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M8 6V4m4 2V4m4 2V4"/></svg>`,
-    color: "from-emerald-400 to-green-500",
-    bg: "bg-emerald-50",
-    border: "border-emerald-200",
+    color: "from-verde-oscuro to-green-500",
+    bg: "bg-gris-claro",
+    border: "border-verde-oscuro/20",
     angle: -90,
   },
   {
@@ -16,7 +16,7 @@ const pasos = [
     titulo: "Traslado a la Planta",
     descripcion: "Transportamos de forma segura y trazable hacia nuestra planta de compostaje autorizada.",
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
-    color: "from-teal-400 to-emerald-500",
+    color: "from-teal-400 to-verde",
     bg: "bg-teal-50",
     border: "border-teal-200",
     angle: -18,
@@ -68,10 +68,10 @@ const positions = pasos.map((_, i) => {
 });
 ---
 
-<section id="como-lo-hacemos" class="py-24 bg-gray-50 relative overflow-hidden">
+<section id="como-lo-hacemos" class="py-24 bg-gris-claro relative overflow-hidden">
   <!-- Fondo decorativo -->
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-10 left-10 w-72 h-72 bg-emerald-100 rounded-full filter blur-3xl opacity-40"></div>
+    <div class="absolute top-10 left-10 w-72 h-72 bg-gris-claro rounded-full filter blur-3xl opacity-40"></div>
     <div class="absolute bottom-10 right-10 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-40"></div>
   </div>
 
@@ -79,9 +79,9 @@ const positions = pasos.map((_, i) => {
 
     <!-- Encabezado -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-3">Nuestro Proceso</h2>
-      <h3 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">¿Cómo lo hacemos?</h3>
-      <div class="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
+      <h2 class="subtitulo text-sm font-bold text-verde mb-3">Nuestro Proceso</h2>
+      <h3 class="text-4xl md:text-5xl font-black text-verde-oscuro mb-6 tracking-tight">¿Cómo lo hacemos?</h3>
+      <div class="w-24 h-1.5 bg-verde mx-auto rounded-full"></div>
       <p class="mt-6 text-lg text-gray-500 font-light leading-relaxed">
         Un ciclo continuo que transforma residuos en recursos, devolviendo valor a la tierra.
       </p>
@@ -140,8 +140,8 @@ const positions = pasos.map((_, i) => {
 
           <!-- Icono central -->
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center shadow-xl shadow-emerald-200 cycle-spin">
-              <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-verde-oscuro to-green-600 flex items-center justify-center shadow-xl shadow-verde-oscuro/10 cycle-spin">
+              <svg class="w-8 h-8 md:w-10 md:h-10 text-gris-claro" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>
             </div>
@@ -157,15 +157,15 @@ const positions = pasos.map((_, i) => {
               >
                 <!-- Círculo del nodo -->
                 <div class={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${paso.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 ring-4 ring-white`}>
-                  <div class="w-7 h-7 md:w-8 md:h-8 text-white [&>svg]:w-full [&>svg]:h-full" set:html={paso.icon}></div>
+                  <div class="w-7 h-7 md:w-8 md:h-8 text-gris-claro [&>svg]:w-full [&>svg]:h-full" set:html={paso.icon}></div>
                 </div>
                 <!-- Número -->
-                <div class="absolute -top-1 -right-1 w-5 h-5 bg-gray-900 rounded-full flex items-center justify-center">
-                  <span class="text-white text-[9px] font-black">{i + 1}</span>
+                <div class="absolute -top-1 -right-1 w-5 h-5 bg-verde-oscuro text-gris-claro rounded-full flex items-center justify-center">
+                  <span class="text-gris-claro text-[9px] font-black">{i + 1}</span>
                 </div>
                 <!-- Tooltip label -->
                 <div class="absolute left-1/2 -translate-x-1/2 mt-2 top-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
-                  <span class="block bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl">{paso.titulo}</span>
+                  <span class="block bg-verde-oscuro text-gris-claro text-gris-claro text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl">{paso.titulo}</span>
                 </div>
               </div>
             );
@@ -180,11 +180,11 @@ const positions = pasos.map((_, i) => {
             <li class={`group flex items-start gap-5 p-5 rounded-2xl border ${paso.border} ${paso.bg} hover:shadow-lg transition-all duration-300`}>
               <!-- Número -->
               <div class={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${paso.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <span class="text-white text-sm font-black">{paso.numero}</span>
+                <span class="text-gris-claro text-sm font-black">{paso.numero}</span>
               </div>
               <!-- Contenido -->
               <div>
-                <h4 class="text-base font-bold text-gray-900 mb-1">{paso.titulo}</h4>
+                <h4 class="text-base font-bold text-verde-oscuro mb-1">{paso.titulo}</h4>
                 <p class="text-sm text-gray-500 leading-relaxed font-light">{paso.descripcion}</p>
               </div>
             </li>

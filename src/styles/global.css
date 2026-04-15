@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@theme {
+  --color-verde-oscuro: #002424;
+  --color-verde: #0bb580;
+  --color-gris-claro: #f1f1f1;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-title: "Montserrat", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-gris-claro);
+    color: var(--color-verde-oscuro);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-block;
+    background-color: var(--color-verde);
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-verde-oscuro);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    color: #ffffff !important;
+  }
+
+  .subtitulo {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 0.222em; /* interletrado 222 */
+  }
+}

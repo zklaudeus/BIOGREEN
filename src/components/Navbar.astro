@@ -12,7 +12,7 @@ const links = [
 ];
 ---
 
-<header id="navbar" data-ishome={isHome.toString()} class={`fixed w-full top- z-50 transition-all duration-300 py-8 ${isHome ? 'text-white' : 'text-gray-900'}`}>
+<header id="navbar" data-ishome={isHome.toString()} class={`fixed w-full top- z-50 transition-all duration-300 py-8 ${isHome ? 'text-gris-claro' : 'text-verde-oscuro'}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center relative z-50">
       
@@ -23,16 +23,20 @@ const links = [
 
       <!-- Menú a la derecha (Desktop) -->
       <nav class="hidden md:flex space-x-8">
-        {links.map(link => (
+        {links.map(link => {
+          const isActive = pathname === link.href || pathname === link.href + '/';
+          return (
           <a 
             href={link.href} 
-            class="nav-link relative text-sm font-medium transition-colors duration-300"
+            class={`nav-link relative text-sm font-medium transition-colors duration-300 ${isActive ? 'text-verde font-bold' : ''}`}
+            aria-current={isActive ? 'page' : undefined}
           >
             {link.name}
             <!-- Hover Underline Animado -->
-            <span class="nav-indicator absolute left-0 -bottom-1 w-0 h-[2px] transition-all duration-300"></span>
+            <span class={`nav-indicator absolute left-0 -bottom-1 h-[2px] transition-all duration-300 ${isActive ? 'w-full bg-verde' : 'w-0'}`}></span>
           </a>
-        ))}
+          );
+        })}
       </nav>
 
       <!-- Botón Menú Hamburguesa (Mobile) -->
@@ -52,17 +56,21 @@ const links = [
   <!-- Menú Desplegable (Mobile) -->
   <div 
     id="mobile-menu" 
-    class="absolute top-0 left-0 w-full bg-white text-gray-900 shadow-xl overflow-hidden transition-all duration-500 ease-in-out z-40 max-h-0 opacity-0"
+    class="absolute top-0 left-0 w-full bg-gris-claro text-verde-oscuro shadow-xl overflow-hidden transition-all duration-500 ease-in-out z-40 max-h-0 opacity-0"
   >
     <div class="pt-24 pb-8 px-6 flex flex-col space-y-4 text-center text-lg font-medium">
-      {links.map(link => (
+      {links.map(link => {
+        const isActive = pathname === link.href || pathname === link.href + '/';
+        return (
         <a 
           href={link.href} 
-          class="mobile-nav-link text-gray-600 transition-colors duration-300"
+          class={`mobile-nav-link transition-colors duration-300 ${isActive ? 'text-verde font-bold' : 'text-verde-oscuro'}`}
+          aria-current={isActive ? 'page' : undefined}
         >
           {link.name}
         </a>
-      ))}
+        );
+      })}
     </div>
   </div>
 </header>
@@ -95,7 +103,7 @@ const links = [
   
   /* ====== Estado Menú Móvil Abierto ====== */
   #navbar.menu-open {
-    color: #1f2937; /* Forzar logo e icono oscuro para que contraste en bg-white */
+    color: #1f2937; /* Forzar logo e icono oscuro para que contraste en bg-gris-claro */
     --hover-color: #10b981;
   }
   

@@ -59,11 +59,11 @@ const residuos = [
 
 <section
   id="residuos-autorizados"
-  class="py-24 bg-white relative overflow-hidden"
+  class="py-24 bg-gris-claro relative overflow-hidden"
 >
   <!-- Decorativo fondo -->
   <div
-    class="absolute -right-20 top-1/4 w-80 h-80 bg-emerald-50 rounded-full filter blur-3xl opacity-60 pointer-events-none"
+    class="absolute -right-20 top-1/4 w-80 h-80 bg-gris-claro rounded-full filter blur-3xl opacity-60 pointer-events-none"
   >
   </div>
 
@@ -72,7 +72,7 @@ const residuos = [
       <!-- Columna izquierda: Texto explicativo -->
       <div class="w-full lg:w-5/12 lg:sticky lg:top-28">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold tracking-wide mb-6"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm font-bold tracking-wide mb-6"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -84,11 +84,11 @@ const residuos = [
         </div>
 
         <h2
-          class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-tight mb-6"
+          class="text-4xl md:text-5xl font-black text-verde-oscuro tracking-tight leading-tight mb-6"
         >
           Residuos<br />
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-500"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-verde-oscuro to-green-500"
             >Autorizados</span
           >
         </h2>
@@ -101,9 +101,9 @@ const residuos = [
 
         <!-- Nota legal -->
         <div
-          class="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-2xl p-6"
+          class="bg-gris-claro border-l-4 border-verde-oscuro/20 rounded-r-2xl p-6"
         >
-          <p class="text-sm text-emerald-900 font-light leading-relaxed">
+          <p class="text-sm text-verde-oscuro font-light leading-relaxed">
             <span class="font-semibold">Importante:</span> Todos los residuos recepcionados
             deben ser orgánicos, no peligrosos y compatibles con el proceso de compostaje.
             El manejo se realiza conforme al <span class="font-semibold"
@@ -117,15 +117,15 @@ const residuos = [
       <div class="w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           residuos.map((categoria) => (
-            <div class="group p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-emerald-200 transition-all duration-300">
-              <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+            <div class="group p-6 rounded-2xl border border-verde-oscuro/20 bg-gris-claro shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-verde-oscuro/20 transition-all duration-300">
+              <h3 class="text-xl font-bold text-verde-oscuro mb-4 group-hover:text-verde-oscuro transition-colors duration-300">
                 {categoria.title}
               </h3>
               <ul class="space-y-3">
                 {categoria.items.map((item) => (
                   <li class="flex items-start gap-3">
                     <svg
-                      class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5"
+                      class="w-5 h-5 text-verde flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ const residuos = [
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span class="text-gray-600 font-medium leading-snug">
+                    <span class="text-verde-oscuro font-medium leading-snug">
                       {item}
                     </span>
                   </li>

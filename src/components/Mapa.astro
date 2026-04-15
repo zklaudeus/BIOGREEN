@@ -2,17 +2,17 @@
 // src/components/Mapa.astro
 ---
 
-<section id="ubicacion" class="py-24 bg-white relative overflow-hidden">
+<section id="ubicacion" class="py-24 bg-gris-claro relative overflow-hidden">
   <!-- Elementos decorativos de fondo -->
   <div
-    class="absolute top-0 right-0 w-1/3 h-full bg-emerald-50 opacity-40 transform -skew-x-12 hidden lg:block"
+    class="absolute top-0 right-0 w-1/3 h-full bg-gris-claro opacity-40 transform -skew-x-12 hidden lg:block"
   >
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-16">
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold tracking-wide mb-4"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm font-bold tracking-wide mb-4"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -23,12 +23,12 @@
         Nuestra Ubicación
       </div>
       <h2
-        class="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tight"
+        class="text-4xl lg:text-5xl font-black text-verde-oscuro mb-6 tracking-tight"
       >
         Visita Nuestra Planta
       </h2>
       <p
-        class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed"
+        class="text-lg text-verde-oscuro max-w-2xl mx-auto font-light leading-relaxed"
       >
         Ubicados estratégicamente en la Región del Bío Bío para ofrecer un
         servicio eficiente y de calidad a nuestros clientes de toda la zona
@@ -37,32 +37,32 @@
     </div>
 
     <div
-      class="bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-100 transform transition-all hover:shadow-emerald-200/50"
+      class="bg-gris-claro rounded-[2rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-verde-oscuro/20 transform transition-all hover:shadow-verde-oscuro/10/50"
     >
       <!-- Panel de Detalles -->
       <div
-        class="w-full lg:w-1/3 bg-gray-900 text-white p-10 lg:p-14 flex flex-col justify-center relative overflow-hidden"
+        class="w-full lg:w-1/3 bg-verde-oscuro text-gris-claro text-gris-claro p-10 lg:p-14 flex flex-col justify-center relative overflow-hidden"
       >
         <!-- Textura/Gradiente fondo panel -->
         <div
-          class="absolute inset-0 bg-gradient-to-br from-emerald-900 to-gray-900 opacity-90"
+          class="absolute inset-0 bg-gradient-to-br from-verde-oscuro to-verde opacity-90"
         >
         </div>
         <div
-          class="absolute top-0 right-0 w-64 h-64 bg-emerald-600 rounded-full mix-blend-screen filter blur-[80px] opacity-30 -translate-y-1/2 translate-x-1/2 pointer-events-none"
+          class="absolute top-0 right-0 w-64 h-64 bg-verde rounded-full mix-blend-screen filter blur-[80px] opacity-30 -translate-y-1/2 translate-x-1/2 pointer-events-none"
         >
         </div>
 
         <div class="relative z-10">
-          <h3 class="text-3xl font-bold mb-8 text-white">BIOGREEN SPA</h3>
+          <h3 class="text-3xl font-bold mb-8 text-gris-claro">BIOGREEN SPA</h3>
 
           <ul class="space-y-8">
             <li class="flex items-start group">
               <div
-                class="bg-emerald-800/50 p-3 rounded-xl mr-5 group-hover:bg-emerald-600 transition-colors duration-300"
+                class="bg-verde-oscuro text-gris-claro/50 p-3 rounded-xl mr-5 group-hover:bg-verde transition-colors duration-300"
               >
                 <svg
-                  class="h-6 w-6 text-emerald-400 group-hover:text-white transition-colors"
+                  class="h-6 w-6 text-verde group-hover:text-gris-claro transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -82,7 +82,7 @@
               </div>
               <div>
                 <p
-                  class="text-emerald-400 font-semibold mb-1 text-sm tracking-wide uppercase"
+                  class="text-verde font-semibold mb-1 text-sm tracking-wide uppercase"
                 >
                   Dirección
                 </p>
@@ -94,10 +94,10 @@
 
             <li class="flex items-start group">
               <div
-                class="bg-emerald-800/50 p-3 rounded-xl mr-5 group-hover:bg-emerald-600 transition-colors duration-300"
+                class="bg-verde-oscuro text-gris-claro/50 p-3 rounded-xl mr-5 group-hover:bg-verde transition-colors duration-300"
               >
                 <svg
-                  class="h-6 w-6 text-emerald-400 group-hover:text-white transition-colors"
+                  class="h-6 w-6 text-verde group-hover:text-gris-claro transition-colors"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -112,28 +112,28 @@
               </div>
               <div>
                 <p
-                  class="text-emerald-400 font-semibold mb-1 text-sm tracking-wide uppercase"
+                  class="text-verde font-semibold mb-1 text-sm tracking-wide uppercase"
                 >
                   Correo Electrónico
                 </p>
                 <a
                   href="mailto:contacto@biogreenrecicla.cl"
-                  class="text-lg text-gray-200 hover:text-white transition-colors"
+                  class="text-lg text-gray-200 hover:text-gris-claro transition-colors"
                   >contacto@biogreenrecicla.cl</a
                 >
               </div>
             </li>
           </ul>
 
-          <div class="mt-12 pt-8 border-t border-gray-700">
+          <div class="mt-12 pt-8 border-t border-verde-oscuro/20">
             <a
               href="https://www.google.com/maps/place/36%C2%B056'48.3%22S+72%C2%B028'05.6%22W/@-36.94684,-72.4909244,14z/data=!4m4!3m3!8m2!3d-36.94675!4d-72.4682222?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
-              class="group flex items-center text-emerald-400 hover:text-emerald-300 transition-colors font-semibold"
+              class="group flex items-center text-verde hover:text-emerald-300 transition-colors font-semibold"
             >
               <span
-                class="border-b border-transparent group-hover:border-emerald-400 transition-colors pb-0.5"
+                class="border-b border-transparent group-hover:border-verde-oscuro/20 transition-colors pb-0.5"
                 >Abrir indicaciones en Google Maps</span
               >
               <svg
@@ -155,7 +155,7 @@
 
       <!-- Contenedor del Mapa (Iframe interactiv) -->
       <div
-        class="w-full lg:w-2/3 h-[450px] lg:h-auto min-h-[500px] bg-gray-100 relative"
+        class="w-full lg:w-2/3 h-[450px] lg:h-auto min-h-[500px] bg-gris-claro relative"
       >
         <!-- Mapa centrado en Cabrero/Quinel -->
         <iframe
