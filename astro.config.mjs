@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  base: "/biogreen",
   vite: {
     plugins: [tailwindcss()],
-    base: "/biogreen",
   }
 });

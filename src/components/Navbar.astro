@@ -1,25 +1,29 @@
 ---
 // src/components/Navbar.astro
 const pathname = Astro.url.pathname;
-const isHome = pathname === '/' || pathname === '/index.html' || pathname === '';
+const base = import.meta.env.BASE_URL;
+const cleanPath = pathname.replace(/\/$/, '') || '/';
+const cleanBase = base.replace(/\/$/, '') || '/';
+const isHome = cleanPath === cleanBase || cleanPath === `${cleanBase}/index.html`;
 
 const links = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Nosotros', href: '/nosotros' },
-  { name: 'Servicios', href: '/servicios' },
-  { name: 'Impacto', href: '/impacto' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: 'Inicio', href: base },
+  { name: 'Nosotros', href: `${base}nosotros` },
+  { name: 'Servicios', href: `${base}servicios` },
+  { name: 'Impacto', href: `${base}impacto` },
+  { name: 'Contacto', href: `${base}contacto` },
 ];
 ---
 
-<header id="navbar" data-ishome={isHome.toString()} class={`fixed w-full top- z-50 transition-all duration-300 py-8 ${isHome ? 'text-gris-claro' : 'text-verde-oscuro'}`}>
+<header id="navbar" data-ishome={isHome.toString()} class={`fixed w-full  top-0 z-50 transition-all duration-300  ${isHome ? 'text-gris-claro' : 'text-verde-oscuro'}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center relative z-50">
       
-      <!-- Logo alineado a la izquierda -->
-      <a href="/" class="flex items-center">
-  <img src="/images/LOGOBIOGREEN.jpeg" alt="BIOGREEN" class="h-20 object-contain" />
-</a>
+      <!-- Logo alineado a la izquierda con doble imagen para transición suave -->
+      <a href={import.meta.env.BASE_URL} class="flex items-center relative">
+        <img id="logo-light" src={`${import.meta.env.BASE_URL}images/logofondoclaro.png`} alt="BIOGREEN Claro" class="logo-img h-20 w-auto object-contain" />
+        <img id="logo-dark" src={`${import.meta.env.BASE_URL}images/logofondooscuro.png`} alt="BIOGREEN Oscuro" class="logo-img absolute top-0 left-0 h-full w-full object-contain opacity-0 pointer-events-none" />
+      </a>
 
       <!-- Menú a la derecha (Desktop) -->
       <nav class="hidden md:flex space-x-8">
@@ -79,26 +83,45 @@ const links = [
   /* ====== Estado Inicial (Top) ====== */
   #navbar {
     background-color: transparent;
-    --hover-color: #34d399; /* Verde esmeralda claro (para fondos oscuros) */
-    --indicator-color: #34d399;
+    --hover-color: var(--color-verde);
+    --indicator-color: var(--color-verde);
   }
   
-  /* Para páginas que no son de inicio, el color de hover inicial debe ser distinto para que se vea sobre fondos claros */
-  #navbar[data-ishome="false"]:not(.is-scrolled) {
-    --hover-color: #10b981;
-    --indicator-color: #10b981;
+  /* ====== Lógica de Intercambio de Logos ====== */
+  /* Estado por defecto (Ej: Páginas internas o Navbar Scrolled) -> Mostrar Claro, Ocultar Oscuro */
+  #logo-light { opacity: 1; }
+  #logo-dark { opacity: 0; pointer-events: none; }
+
+  /* Solo en página inicial y Navbar TOP -> Mostrar Oscuro, Ocultar Claro */
+  #navbar[data-ishome="true"]:not(.is-scrolled) #logo-light {
+    opacity: 0;
+  }
+  #navbar[data-ishome="true"]:not(.is-scrolled) #logo-dark {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ====== Logo: transición suave de tamaño ====== */
+  .logo-img {
+    height: 5rem; /* 80px por defecto */
+    transition: height 0.4s ease, opacity 0.5s ease;
   }
 
   /* ====== Estado con Scroll ====== */
   #navbar.is-scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    color: #1f2937; /* Gris oscuro para el texto */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    --hover-color: #10b981; /* Verde esmeralda estándar */
-    --indicator-color: #10b981;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    color: var(--color-verde-oscuro) !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    --hover-color: var(--color-verde);
+    --indicator-color: var(--color-verde);
+  }
+
+  /* Logo más pequeño al hacer scroll */
+  #navbar.is-scrolled .logo-img {
+    height: 3rem; /* 48px — compacto */
   }
   
   /* ====== Estado Menú Móvil Abierto ====== */

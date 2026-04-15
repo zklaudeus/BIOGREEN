@@ -16,17 +16,17 @@ const currentYear = new Date().getFullYear();
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10"
   >
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-      <!-- Brand & About -->
       <div class="lg:col-span-2">
-        <a href="/" class="inline-block mb-6 group">
-          <span
-            class="text-4xl font-black text-gris-claro tracking-tight transition-colors group-hover:text-verde"
-          >
-            BIO<span class="text-verde">GREEN</span>
-          </span>
+        <a href={import.meta.env.BASE_URL} class="flex items-center relative">
+          <img
+            id="logo-light"
+            src={`${import.meta.env.BASE_URL}images/logofondooscuro.png`}
+            alt="BIOGREEN Claro"
+            class="h-32 w-auto object-contain transition-opacity duration-500"
+          />
         </a>
         <p
-          class="text-gray-400 max-w-md mb-8 leading-relaxed font-light text-lg"
+          class="text-gris-claro/60 max-w-md mb-8 leading-relaxed font-light text-lg"
         >
           Transformando residuos orgánicos en oportunidades. Regeneramos nuestro
           suelo, reducimos el impacto ambiental y nutrimos el ciclo de la vida
@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
         <div class="flex space-x-5">
           <a
             href="https://www.instagram.com/biogreen_cl"
-            class="text-gray-500 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
+            class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
             aria-label="Instagram"
             target="_blank"
           >
@@ -49,7 +49,7 @@ const currentYear = new Date().getFullYear();
           </a>
           <a
             href="#"
-            class="text-gray-500 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
+            class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
             aria-label="LinkedIn"
           >
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ const currentYear = new Date().getFullYear();
           </a>
           <a
             href="#"
-            class="text-gray-500 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
+            class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
             aria-label="Facebook"
           >
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -78,15 +78,14 @@ const currentYear = new Date().getFullYear();
           class="text-sm font-bold text-gris-claro tracking-wider uppercase mb-6 relative inline-block"
         >
           Enlaces Rápidos
-          <span
-            class="absolute -bottom-2 left-0 w-8 h-1 bg-verde rounded-full"
+          <span class="absolute -bottom-2 left-0 w-8 h-1 bg-verde rounded-full"
           ></span>
         </h3>
         <ul class="space-y-4">
           <li>
             <a
-              href="/#inicio"
-              class="text-gray-400 hover:text-verde transition-colors flex items-center group"
+              href={`${import.meta.env.BASE_URL}#inicio`}
+              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
             >
               <span
                 class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -99,8 +98,8 @@ const currentYear = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="/nosotros"
-              class="text-gray-400 hover:text-verde transition-colors flex items-center group"
+              href={`${import.meta.env.BASE_URL}nosotros`}
+              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
             >
               <span
                 class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -113,8 +112,8 @@ const currentYear = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="/servicios"
-              class="text-gray-400 hover:text-verde transition-colors flex items-center group"
+              href={`${import.meta.env.BASE_URL}servicios`}
+              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
             >
               <span
                 class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -127,8 +126,8 @@ const currentYear = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="/contacto"
-              class="text-gray-400 hover:text-verde transition-colors flex items-center group"
+              href={`${import.meta.env.BASE_URL}contacto`}
+              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
             >
               <span
                 class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -148,8 +147,7 @@ const currentYear = new Date().getFullYear();
           class="text-sm font-bold text-gris-claro tracking-wider uppercase mb-6 relative inline-block"
         >
           Contáctanos
-          <span
-            class="absolute -bottom-2 left-0 w-8 h-1 bg-verde rounded-full"
+          <span class="absolute -bottom-2 left-0 w-8 h-1 bg-verde rounded-full"
           ></span>
         </h3>
         <ul class="space-y-5 text-gray-400">
@@ -222,23 +220,17 @@ const currentYear = new Date().getFullYear();
 
     <!-- Footer Bottom -->
     <div
-      class="mt-16 pt-8 border-t border-verde-oscuro/20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm"
+      class="mt-16 pt-8 border-t border-verde-oscuro/20 flex flex-col md:flex-row justify-between items-center text-gris-claro/50 text-sm"
     >
       <p>&copy; {currentYear} BIOGREEN. Todos los derechos reservados.</p>
       <div class="mt-4 md:mt-0 space-x-6">
-        <a
-          href="#"
-          class="hover:text-verde transition-colors relative group"
-        >
+        <a href="#" class="hover:text-verde transition-colors relative group">
           Términos de servicio
           <span
             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-verde transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
-        <a
-          href="#"
-          class="hover:text-verde transition-colors relative group"
-        >
+        <a href="#" class="hover:text-verde transition-colors relative group">
           Política de privacidad
           <span
             class="absolute -bottom-1 left-0 w-0 h-[1px] bg-verde transition-all duration-300 group-hover:w-full"

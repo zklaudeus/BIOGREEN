@@ -21,9 +21,18 @@
           <div
             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gris-claro text-verde-oscuro text-sm font-semibold tracking-wide mb-6"
           >
-            <span class="w-2 h-2 rounded-full bg-verde animate-pulse"
-            ></span>
-            Bienvenidos a BIOGREEN
+            <span class="w-2 h-2 rounded-full bg-verde animate-pulse"></span>
+            Bienvenidos a <a
+              href={import.meta.env.BASE_URL}
+              class="flex items-center relative"
+            >
+              <img
+                id="logo-light"
+                src={`${import.meta.env.BASE_URL}images/logofondoclaro.png`}
+                alt="BIOGREEN Claro"
+                class="h-32 w-auto object-contain transition-opacity duration-500"
+              />
+            </a>
           </div>
 
           <h2
@@ -48,7 +57,9 @@
                 valor a la comunidad.</strong
               >
             </p>
-            <p class="pl-4 border-l-4 border-verde-oscuro/20 text-verde-oscuro italic">
+            <p
+              class="pl-4 border-l-4 border-verde-oscuro/20 text-verde-oscuro italic"
+            >
               Somos una planta de compostaje autorizada, preparada para recibir
               y valorizar residuos orgánicos no peligrosos, con trazabilidad,
               eficiencia y compromiso ambiental.
@@ -57,7 +68,7 @@
 
           <div class="pt-8">
             <a
-              href="/contacto"
+              href={`${import.meta.env.BASE_URL}contacto`}
               class="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-gris-claro transition-all duration-200 bg-verde border border-transparent rounded-full hover:bg-verde-oscuro text-gris-claro hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:border-verde-oscuro/20"
             >
               Únete al cambio
@@ -85,18 +96,11 @@
         <div
           class="relative group rounded-3xl overflow-hidden shadow-2xl z-10 aspect-[4/3] bg-gris-claro"
         >
-          <!-- Imagen Generada de Compostaje -->
           <img
-            src="/images/compostaje.png"
+            src={`${import.meta.env.BASE_URL}images/vertical (8).jpg`}
             alt="Maquinaria y proceso de compostaje en BIOGREEN"
             class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
           />
-
-          <!-- Overlay to indicate it's an image space, visible on hover -->
-          <div
-            class="absolute inset-0 bg-verde-oscuro text-gris-claro/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-          >
-          </div>
         </div>
 
         <!-- Decorative Background Frame -->

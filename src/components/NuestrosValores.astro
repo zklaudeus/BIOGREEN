@@ -55,7 +55,7 @@ const valores = [
           <div class="absolute top-0 right-0 w-20 h-20 bg-gris-claro rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
           <!-- Número de orden -->
-          <span class="absolute top-6 right-7 text-4xl font-black text-gray-50 group-hover:text-gris-claro transition-colors select-none leading-none">
+          <span class="absolute top-6 right-7 text-4xl font-black text-verde-oscuro/10 group-hover:text-verde-oscuro/20 transition-colors select-none leading-none">
             {String(i + 1).padStart(2, '0')}
           </span>
 
@@ -66,7 +66,7 @@ const valores = [
 
           <!-- Contenido -->
           <h4 class="text-xl font-black text-verde-oscuro mb-3 tracking-tight uppercase">{valor.nombre}</h4>
-          <p class="text-gray-500 leading-relaxed font-light">{valor.descripcion}</p>
+          <p class="text-verde-oscuro/60 leading-relaxed font-light">{valor.descripcion}</p>
 
           <!-- Línea decorativa inferior -->
           <div class="w-0 h-0.5 bg-verde mt-6 rounded-full transition-all duration-500 group-hover:w-12"></div>
