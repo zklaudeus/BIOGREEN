@@ -1,14 +1,64 @@
 ---
 // src/components/Servicio.astro
 const residuos = [
-  { texto: "Lodos orgánicos de efluentes y procesos industriales.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>` },
-  { texto: "Desechos agroindustriales (frutas, verduras, cáscaras, pulpas, bagazo).", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>` },
-  { texto: "Residuos de panadería y casinos industriales.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0 2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0 2.708 2.708 0 01-3 0 2.708 2.708 0 00-3 0V8.5a5 5 0 0110 0v5.546"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 20h18"/></svg>` },
-  { texto: "Residuos forestales (corteza, ramas, hojas, viruta, serrín).", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>` },
-  { texto: "Rechazos de clasificación, dregs, grits, cal.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>` },
-  { texto: "Cenizas y arenas de calderas de biomasa.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>` },
-  { texto: "Levadura residual, orujo de uva, orujo de aceituna.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>` },
-  { texto: "Podas y restos vegetales urbanos.", icon: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>` },
+  {
+    title: "Industria agroalimentaria",
+    items: [
+      "Residuos de la industria agroalimentaria",
+      "Residuos de procesos alimentarios",
+      "Subproductos orgánicos de origen vegetal o animal",
+      "Residuos del procesamiento de carnes, frutas, verduras y lácteos"
+    ]
+  },
+  {
+    title: "Industria pesquera y cárnica",
+    items: [
+      "Lodos y residuos derivados de pescado",
+      "Residuos del procesamiento de carnes y pescados"
+    ]
+  },
+  {
+    title: "Industria láctea",
+    items: [
+      "Residuos de la industria láctea",
+      "Sueros, leches y grasas derivadas"
+    ]
+  },
+  {
+    title: "Industria vitivinícola y bebidas",
+    items: [
+      "Residuos de la industria vitivinícola",
+      "Subproductos de fermentación"
+    ]
+  },
+  {
+    title: "Grasas y aceites",
+    items: [
+      "Residuos de tratamiento de grasas",
+      "Ceras animales o vegetales"
+    ]
+  },
+  {
+    title: "RILES (no peligrosos)",
+    items: [
+      "Lodos orgánicos provenientes de plantas de tratamiento"
+    ]
+  },
+  {
+    title: "Residuos orgánicos comerciales",
+    items: [
+      "Casinos, restaurantes y supermercados",
+      "Centros de distribución de alimentos"
+    ]
+  },
+  {
+    title: "Industria de la madera y derivados",
+    items: [
+      "Residuos de madera industrial no peligrosos",
+      "Subproductos de procesos de fabricación de tableros",
+      "Materiales derivados de la madera provenientes de procesos productivos"
+    ]
+  }
 ];
 ---
 
@@ -46,22 +96,22 @@ const residuos = [
       </div>
 
       <!-- Columna derecha: Lista de residuos -->
-      <div class="w-full lg:w-7/12">
-        <ul class="space-y-4">
-          {residuos.map((item, i) => (
-            <li class="group flex items-start gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg hover:-translate-x-1 hover:border-emerald-200 transition-all duration-300">
-              <!-- Número + Ícono -->
-              <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                <Fragment set:html={item.icon} />
-              </div>
-              <!-- Texto -->
-              <div class="flex flex-col justify-center">
-                <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-0.5">#{String(i + 1).padStart(2, '0')}</span>
-                <p class="text-gray-800 font-medium leading-snug">{item.texto}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div class="w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {residuos.map((categoria) => (
+          <div class="group p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-emerald-200 transition-all duration-300">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+              {categoria.title}
+            </h3>
+            <ul class="space-y-3">
+              {categoria.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span class="text-gray-600 font-medium leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
     </div>

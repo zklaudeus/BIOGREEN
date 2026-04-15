@@ -2,6 +2,7 @@
 // src/layouts/Layout.astro
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
@@ -26,5 +27,6 @@ const { title = "EcoClean - Cuidamos el planeta" } = Astro.props;
 
     <Footer />
     <SpeedInsights />
+    <WhatsAppButton />
   </body>
 </html>
