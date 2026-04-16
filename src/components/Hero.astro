@@ -6,19 +6,18 @@ import heroBg from "../assets/images/hero-bg-2.jpg";
 
 <section
   id="inicio"
-  class="relative min-h-screen flex items-center justify-center bg-verde-oscuro text-gris-claro text-gris-claro pt-20"
+  class="relative min-h-[600px] h-[80vh] md:min-h-screen flex items-center justify-center bg-verde-oscuro text-gris-claro pt-20 overflow-hidden"
 >
-  <!-- Imagen de fondo con optimización -->
+  <!-- Imagen de fondo optimizada para responsivo -->
   <div class="absolute inset-0 z-0">
     <Image
       src={heroBg}
       alt="Fondo de campo verde BioGreen"
-      class="w-full h-full object-cover object-center landscape:object-[center_30%]"
+      class="w-full h-full object-cover object-center"
       loading="eager"
     />
-    <!-- Duo-Overlay para profundidad y legibilidad -->
-    <div class="absolute inset-0 bg-verde-oscuro/40 md:bg-verde-oscuro/30 transition-colors duration-500"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-verde-oscuro/80 via-transparent to-verde-oscuro/20"></div>
+    <!-- Overlay original para legibilidad -->
+    <div class="absolute inset-0 bg-verde-oscuro/25"></div>
   </div>
 
   <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
