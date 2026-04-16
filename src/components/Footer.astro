@@ -1,8 +1,18 @@
 ---
 // src/components/Footer.astro
-import { Image } from 'astro:assets';
-import logoOscuro from '../assets/images/logo-oscuro.png';
+import { Image } from "astro:assets";
+import logoOscuro from "../assets/images/logo-oscuro.png";
 const currentYear = new Date().getFullYear();
+const pathname = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+
+const quickLinks = [
+  { name: "Inicio", href: `${base}` },
+  { name: "Sobre Nosotros", href: `${base}nosotros` },
+  { name: "Nuestros Servicios", href: `${base}servicios` },
+  { name: "Impacto", href: `${base}impacto` },
+  { name: "Contacto", href: `${base}contacto` },
+];
 ---
 
 <footer
@@ -84,62 +94,29 @@ const currentYear = new Date().getFullYear();
           ></span>
         </h3>
         <ul class="space-y-4">
-          <li>
-            <a
-              href={`${import.meta.env.BASE_URL}#inicio`}
-              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></span>
-              <span
-                class="transform transition-transform group-hover:translate-x-1"
-                >Inicio</span
-              >
-            </a>
-          </li>
-          <li>
-            <a
-              href={`${import.meta.env.BASE_URL}nosotros`}
-              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></span>
-              <span
-                class="transform transition-transform group-hover:translate-x-1"
-                >Sobre Nosotros</span
-              >
-            </a>
-          </li>
-          <li>
-            <a
-              href={`${import.meta.env.BASE_URL}servicios`}
-              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></span>
-              <span
-                class="transform transition-transform group-hover:translate-x-1"
-                >Nuestros Servicios</span
-              >
-            </a>
-          </li>
-          <li>
-            <a
-              href={`${import.meta.env.BASE_URL}contacto`}
-              class="text-gris-claro/50 hover:text-verde transition-colors flex items-center group"
-            >
-              <span
-                class="w-1.5 h-1.5 rounded-full bg-verde mr-3 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></span>
-              <span
-                class="transform transition-transform group-hover:translate-x-1"
-                >Contacto</span
-              >
-            </a>
-          </li>
+          {
+            quickLinks.map((link) => {
+              const isActive =
+                pathname === link.href || pathname === link.href + "/";
+              return (
+                <li>
+                  <a
+                    href={link.href}
+                    class={`transition-colors flex items-center group ${isActive ? "text-verde" : "text-gris-claro/50 hover:text-verde"}`}
+                  >
+                    <span
+                      class={`w-1.5 h-1.5 rounded-full bg-verde mr-3 transition-opacity ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                    />
+                    <span
+                      class={`transform transition-transform ${isActive ? "" : "group-hover:translate-x-1"}`}
+                    >
+                      {link.name}
+                    </span>
+                  </a>
+                </li>
+              );
+            })
+          }
         </ul>
       </div>
 
@@ -196,7 +173,7 @@ const currentYear = new Date().getFullYear();
               >contacto@biogreenrecicla.cl</a
             >
           </li>
-            <li class="flex items-center">
+          <li class="flex items-center">
             <svg
               class="h-6 w-6 text-verde mr-4 flex-shrink-0"
               fill="none"
