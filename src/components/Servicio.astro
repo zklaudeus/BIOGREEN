@@ -72,7 +72,7 @@ const residuos = [
       <!-- Columna izquierda: Texto explicativo -->
       <div class="w-full lg:w-5/12 lg:sticky lg:top-28">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
+          class="inline-flex font-semibold items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -84,7 +84,7 @@ const residuos = [
         </div>
 
         <h2
-          class="text-4xl md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-6"
+          class="text-4xl font-semibold md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-6"
         >
           Residuos<br />
           <span
@@ -93,7 +93,7 @@ const residuos = [
           >
         </h2>
 
-        <p class="text-lg text-verde-oscuro/60 leading-relaxed mb-8 font-sans">
+        <p class="text-lg text-verde-oscuro/70 leading-relaxed mb-8 font-sans">
           Contamos con autorización para recepcionar una amplia gama de residuos
           orgánicos no peligrosos compatibles con el proceso de compostaje
           industrial.
@@ -101,14 +101,31 @@ const residuos = [
 
         <!-- Nota legal -->
         <div
-          class="bg-gris-claro border-l-4 border-verde-oscuro/20 rounded-r-2xl p-6"
+          class="bg-white/50 backdrop-blur-sm border-l-4 border-verde rounded-2xl p-6 shadow-sm flex gap-4 items-start"
         >
-          <p class="text-sm text-verde-oscuro font-sans leading-relaxed">
-            <span class="titulo-secundario">Importante:</span> Todos los residuos
-            recepcionados deben ser orgánicos, no peligrosos y compatibles con el
-            proceso de compostaje. El manejo se realiza conforme al <span
-              class="font-title">Manual de Procedimientos autorizado.</span
+          <div class="flex-shrink-0 text-verde mt-1">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 17c-.77 1.333.192 3 1.732 3z"
+              ></path>
+            </svg>
+          </div>
+          <p class="text-sm text-verde-oscuro font-sans leading-relaxed">
+            <span
+              class="titulo-secundario font-semibold text-verde uppercase tracking-wider block mb-1"
+              >Importante:</span
+            >
+            Todos los residuos recepcionados deben ser orgánicos, no peligrosos y
+            compatibles con el proceso de compostaje industrial. El manejo se realiza
+            bajo estricto cumplimiento del Manual de Procedimientos autorizado.
           </p>
         </div>
       </div>
@@ -118,8 +135,17 @@ const residuos = [
         {
           residuos.map((categoria) => (
             <div class="group p-6 rounded-2xl border border-verde-oscuro/20 bg-gris-claro shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-verde-oscuro/20 transition-all duration-300">
-              <h3 class="text-xl font-title text-verde-oscuro mb-4 group-hover:text-verde-oscuro transition-colors duration-300">
-                {categoria.title}
+              <h3
+                class="text-xl font-title font-semibold text-verde-oscuro mb-6 transition-colors duration-300"
+              >
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-verde-oscuro to-verde block mb-3"
+                >
+                  {categoria.title}
+                </span>
+                <span
+                  class="w-10 h-1 bg-gradient-to-r from-verde to-verde-oscuro rounded-full block transform group-hover:w-16 transition-all duration-300"
+                ></span>
               </h3>
               <ul class="space-y-3">
                 {categoria.items.map((item) => (

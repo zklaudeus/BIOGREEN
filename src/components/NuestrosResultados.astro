@@ -1,7 +1,7 @@
 ---
 // src/components/NuestrosResultados.astro
-import { Image } from 'astro:assets';
-import sacoCompost from '../assets/images/vertical-3.jpg';
+import { Image } from "astro:assets";
+import sacoCompost from "../assets/images/vertical-3.jpg";
 ---
 
 <section
@@ -23,7 +23,7 @@ import sacoCompost from '../assets/images/vertical-3.jpg';
       <!-- Columna de Texto -->
       <div class="w-full lg:w-1/2">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
+          class="inline-flex items-center font-semibold gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
         >
           <svg
             class="w-4 h-4"
@@ -42,7 +42,7 @@ import sacoCompost from '../assets/images/vertical-3.jpg';
         </div>
 
         <h2
-          class="text-4xl md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-8"
+          class="text-4xl font-semibold md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-8"
         >
           Nuestro<br />
           <span
@@ -77,8 +77,8 @@ import sacoCompost from '../assets/images/vertical-3.jpg';
             El compost <strong class="titulo-secundario text-verde-oscuro"
               >BIOGREEN</strong
             > es un abono natural, estabilizado y ensacado, listo para su uso o comercialización.
-            Representa el cierre de un ciclo sustentable: <span
-              class="text-verde titulo-secundario"
+            Representa el cierre de un ciclo sustentable:
+            <span class="block mt-4 text-verde titulo-secundario text-base"
               >transformar residuos en valor para el suelo.</span
             >
           </p>
@@ -117,13 +117,13 @@ import sacoCompost from '../assets/images/vertical-3.jpg';
 
         <!-- Contenedor de la Imagen -->
         <div
-          class="relative w-full h-full max-w-sm aspect-[5/5] rounded-3xl bg-gris-claro border-white shadow-2xl overflow-hidden group flex items-center justify-center"
+          class="relative w-full h-full max-w-sm aspect-[5/5] rounded-3xl bg-gris-claro shadow-2xl overflow-hidden group"
         >
           <!-- Imagen del Saco -->
           <Image
             src={sacoCompost}
             alt="Saco de Compost BIOGREEN"
-            class="w-auto h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-xl z-20"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-20"
           />
 
           <!-- Etiqueta flotante inferior -->
