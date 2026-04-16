@@ -1,5 +1,8 @@
 ---
 // src/components/EquipoTrabajo.astro
+import { Image } from 'astro:assets';
+import joaquinImg from '../assets/images/joaquin.jpg';
+
 const equipo = [
   {
     nombre: "Gonzalo Urrejola De la Barrera",
@@ -17,7 +20,7 @@ const equipo = [
     telefono: "+56 9 7513 2551",
     profesion: "Ingeniero Comercial",
     instagram: "biogreen_cl",
-    foto: "images/joaquin.jpeg",
+    foto: joaquinImg,
   },
   {
     nombre: "Miguel Angel Silva Stuardo",
@@ -65,8 +68,8 @@ const equipo = [
             <!-- Avatar: foto si existe, inicial si no -->
             <div class="w-28 h-28 rounded-full overflow-hidden mb-4 ring-4 ring-white/30 shadow-2xl flex-shrink-0">
               {persona.foto
-                ? <img
-                    src={`${import.meta.env.BASE_URL}${persona.foto}`}
+                ? <Image
+                    src={persona.foto}
                     alt={persona.nombre}
                     class="w-full h-full object-cover object-top"
                   />

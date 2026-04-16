@@ -1,5 +1,9 @@
 ---
 // src/components/Navbar.astro
+import { Image } from 'astro:assets';
+import logoClaro from '../assets/images/logo-claro.png';
+import logoOscuro from '../assets/images/logo-oscuro.png';
+
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 const cleanPath = pathname.replace(/\/$/, '') || '/';
@@ -21,8 +25,8 @@ const links = [
       
       <!-- Logo alineado a la izquierda con doble imagen para transición suave -->
       <a href={import.meta.env.BASE_URL} class="flex items-center relative">
-        <img id="logo-light" src={`${import.meta.env.BASE_URL}images/logofondoclaro.png`} alt="BIOGREEN Claro" class="logo-img h-20 w-auto object-contain" />
-        <img id="logo-dark" src={`${import.meta.env.BASE_URL}images/logofondooscuro.png`} alt="BIOGREEN Oscuro" class="logo-img absolute top-0 left-0 h-full w-full object-contain opacity-0 pointer-events-none" />
+        <Image id="logo-light" src={logoClaro} alt="BIOGREEN Logo Claro" class="logo-img h-20 w-auto object-contain" />
+        <Image id="logo-dark" src={logoOscuro} alt="BIOGREEN Logo Oscuro" class="logo-img absolute top-0 left-0 h-full w-full object-contain opacity-0 pointer-events-none" />
       </a>
 
       <!-- Menú a la derecha (Desktop) -->
@@ -47,7 +51,7 @@ const links = [
       <button 
         id="menu-toggle" 
         class="md:hidden flex flex-col items-center justify-center w-8 h-8 gap-[5px] focus:outline-none"
-        aria-label="Toggle Menu"
+        aria-label="Alternar menú de navegación"
       >
         <span class="line-1 w-6 h-[2px] bg-current transition-transform duration-300 ease-in-out"></span>
         <span class="line-2 w-6 h-[2px] bg-current transition-opacity duration-300 ease-in-out"></span>
@@ -166,10 +170,8 @@ const links = [
 
 <script>
   // El script de Astro maneja las interacciones del cliente
-  document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById('navbar');
-    if (!navbar) return;
-
+    if (navbar) {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     
@@ -212,5 +214,5 @@ const links = [
 
     // Validar en la carga inicial
     handleScroll();
-  });
+    }
 </script>

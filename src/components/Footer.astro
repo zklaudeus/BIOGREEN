@@ -1,5 +1,7 @@
 ---
 // src/components/Footer.astro
+import { Image } from 'astro:assets';
+import logoOscuro from '../assets/images/logo-oscuro.png';
 const currentYear = new Date().getFullYear();
 ---
 
@@ -18,11 +20,11 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
       <div class="lg:col-span-2">
         <a href={import.meta.env.BASE_URL} class="flex items-center relative">
-          <img
-            id="logo-light"
-            src={`${import.meta.env.BASE_URL}images/logofondooscuro.png`}
-            alt="BIOGREEN Claro"
+          <Image
+            src={logoOscuro}
+            alt="BIOGREEN Logo"
             class="h-32 w-auto object-contain transition-opacity duration-500"
+            loading="lazy"
           />
         </a>
         <p
@@ -38,7 +40,7 @@ const currentYear = new Date().getFullYear();
           <a
             href="https://www.instagram.com/biogreen_cl"
             class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
-            aria-label="Instagram"
+            aria-label="Seguir en Instagram de BIOGREEN"
             target="_blank"
           >
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -50,7 +52,7 @@ const currentYear = new Date().getFullYear();
           <a
             href="#"
             class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
-            aria-label="LinkedIn"
+            aria-label="Visitar perfil de LinkedIn de BIOGREEN"
           >
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -61,7 +63,7 @@ const currentYear = new Date().getFullYear();
           <a
             href="#"
             class="text-gris-claro/50 hover:text-verde hover:-translate-y-1 transition-all duration-300 transform"
-            aria-label="Facebook"
+            aria-label="Visitar página de Facebook de BIOGREEN"
           >
             <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -194,7 +196,7 @@ const currentYear = new Date().getFullYear();
               >contacto@biogreenrecicla.cl</a
             >
           </li>
-          <li class="flex items-center">
+            <li class="flex items-center">
             <svg
               class="h-6 w-6 text-verde mr-4 flex-shrink-0"
               fill="none"
@@ -209,7 +211,7 @@ const currentYear = new Date().getFullYear();
               ></path>
             </svg>
             <a
-              href="tel:++56 9 7513 2551"
+              href="tel:+56975132551"
               class="hover:text-verde transition-colors font-medium"
               >+56 9 7513 2551</a
             >

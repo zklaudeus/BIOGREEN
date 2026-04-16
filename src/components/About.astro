@@ -1,5 +1,7 @@
 ---
 // src/components/About.astro
+import { Image } from 'astro:assets';
+import aboutImg from '../assets/images/vertical-1.jpg';
 ---
 
 <section id="nosotros" class="py-16 md:py-24 bg-gris-claro">
@@ -13,21 +15,20 @@
         <div class="absolute inset-0 bg-verde opacity-5"></div>
 
         <!-- Imagen -->
-        <img
-          id="logo-light"
-          src={`${import.meta.env.BASE_URL}images/vertical1.jpg`}
-          alt="BIOGREEN Claro"
-          class="h-auto w-auto object-contain transition-opacity duration-500"
+        <Image
+          src={aboutImg}
+          alt="Trabajadores en planta de compostaje BioGreen"
+          class="w-full h-full object-cover transition-opacity duration-500"
         />
       </div>
 
       <!-- Texto -->
       <div class="order-1 md:order-2">
-        <h2
+        <h1
           class="text-4xl lg:text-5xl titulo-secundario text-verde-oscuro mb-6 tracking-tight flex items-center gap-2"
         >
           ¿Qué es BIOGREEN?
-        </h2>
+        </h1>
         <div class="w-24 h-1.5 bg-verde mb-8 rounded-full"></div>
         <p class="text-lg text-verde-oscuro mb-6 leading-relaxed font-sans">
           BIOGREEN es una planta de compostaje <strong>

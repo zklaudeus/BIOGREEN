@@ -1,5 +1,7 @@
 ---
 // src/components/NuestrosResultados.astro
+import { Image } from 'astro:assets';
+import sacoCompost from '../assets/images/vertical-3.jpg';
 ---
 
 <section
@@ -118,8 +120,8 @@
           class="relative w-full h-full max-w-sm aspect-[5/5] rounded-3xl bg-gris-claro border-white shadow-2xl overflow-hidden group flex items-center justify-center"
         >
           <!-- Imagen del Saco -->
-          <img
-            src={`${import.meta.env.BASE_URL}images/vertical (3).jpg`}
+          <Image
+            src={sacoCompost}
             alt="Saco de Compost BIOGREEN"
             class="w-auto h-auto object-contain transition-transform duration-700 group-hover:scale-105 drop-shadow-xl z-20"
           />

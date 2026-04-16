@@ -1,5 +1,7 @@
 ---
 // src/components/AutorizacionSanitaria.astro
+import { Image } from 'astro:assets';
+import minsalImg from '../assets/images/minsal.png';
 ---
 
 <section
@@ -160,8 +162,8 @@
         <div
           class="flex-shrink-0 bg-gris-claro rounded-2xl p-2 shadow-lg flex items-center justify-center w-36 h-24"
         >
-          <img
-            src="/images/Color_Minsal.png"
+          <Image
+            src={minsalImg}
             alt="Logo SEREMI de Salud Biobío"
             class="max-h-full max-w-full object-contain"
           />
