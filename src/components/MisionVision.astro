@@ -2,51 +2,111 @@
 // src/components/MisionVision.astro
 ---
 
-<section id="mision-vision" class="py-24 bg-gris-claro relative overflow-hidden">
+<section
+  id="mision-vision"
+  class="py-24 bg-gris-claro relative overflow-hidden"
+>
   <!-- Decorative Background -->
-  <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-gris-claro rounded-full mix-blend-multiply filter blur-3xl opacity-50 pointer-events-none"></div>
+  <div
+    class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-gris-claro rounded-full mix-blend-multiply filter blur-3xl opacity-50 pointer-events-none"
+  >
+  </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-      
       <!-- Misión -->
-      <div class="bg-gris-claro rounded-[2rem] p-10 sm:p-14 shadow-xl border border-verde-oscuro/20 relative group hover:-translate-y-2 transition-transform duration-500 flex flex-col justify-center">
+      <div
+        class="bg-gris-claro rounded-[2rem] p-10 sm:p-14 shadow-xl border border-verde-oscuro/20 relative group hover:-translate-y-2 transition-transform duration-500 flex flex-col justify-center"
+      >
         <!-- Elemento decorativo esquina -->
-        <div class="absolute top-0 right-0 w-32 h-32 bg-gris-claro rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-110"></div>
-        
-        <div class="w-16 h-16 bg-verde text-gris-claro rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-verde-oscuro/10/30">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        <div
+          class="absolute top-0 right-0 w-32 h-32 bg-gris-claro rounded-bl-full -z-10 transition-transform duration-500 group-hover:scale-110"
+        >
+        </div>
+
+        <div
+          class="w-16 h-16 bg-verde text-gris-claro rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-verde-oscuro/10/30"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
-        
-        <h3 class="text-3xl font-black text-verde-oscuro mb-6 tracking-tight">Nuestra Misión</h3>
-        
-        <p class="text-lg text-verde-oscuro leading-relaxed font-light">
-          Liderar la gestión sustentable de residuos orgánicos, actuando como destino final autorizado, y transformándolos en compost de alta calidad mediante procesos eficientes e innovadores. Nuestro compromiso es reducir el impacto ambiental y regenerar los suelos.
+
+        <h3 class="text-3xl font-title text-verde-oscuro mb-6 tracking-tight">
+          Nuestra Misión
+        </h3>
+
+        <p class="text-lg text-verde-oscuro leading-relaxed font-sans">
+          Liderar la gestión sustentable de residuos orgánicos, actuando como
+          destino final autorizado, y transformándolos en compost de alta
+          calidad mediante procesos eficientes e innovadores. Nuestro compromiso
+          es reducir el impacto ambiental y regenerar los suelos.
         </p>
       </div>
 
       <!-- Visión -->
-      <div class="bg-verde-oscuro text-gris-claro rounded-[2rem] p-10 sm:p-14 shadow-2xl text-gris-claro relative group hover:-translate-y-2 transition-transform duration-500 overflow-hidden flex flex-col justify-center">
+      <div
+        class="bg-verde-oscuro text-gris-claro rounded-[2rem] p-10 sm:p-14 shadow-2xl text-gris-claro relative group hover:-translate-y-2 transition-transform duration-500 overflow-hidden flex flex-col justify-center"
+      >
         <!-- Gradientes de fondo -->
-        <div class="absolute inset-0 bg-gradient-to-br from-verde-oscuro to-transparent opacity-80 z-0 pointer-events-none"></div>
-        <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-verde rounded-full blur-3xl opacity-40 z-0 pointer-events-none transition-transform duration-700 group-hover:scale-150"></div>
-        
-        <div class="relative z-10 w-16 h-16 bg-gris-claro text-verde-oscuro rounded-2xl flex items-center justify-center mb-8 shadow-xl">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-verde-oscuro to-transparent opacity-80 z-0 pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute -bottom-16 -right-16 w-64 h-64 bg-verde rounded-full blur-3xl opacity-40 z-0 pointer-events-none transition-transform duration-700 group-hover:scale-150"
+        >
+        </div>
+
+        <div
+          class="relative z-10 w-16 h-16 bg-gris-claro text-verde-oscuro rounded-2xl flex items-center justify-center mb-8 shadow-xl"
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            ></path>
           </svg>
         </div>
-        
-        <h3 class="text-3xl font-black text-gris-claro mb-6 tracking-tight relative z-10">Nuestra Visión</h3>
-        
-        <p class="text-lg text-gris-claro leading-relaxed font-light relative z-10">
-          Ser un referente nacional en compostaje, reconocidos por valorar residuos mediante disposición final certificada, convirtiéndolos en recursos valiosos que enriquecen el suelo y promueven la agricultura sostenible.
+
+        <h3
+          class="text-3xl font-title text-gris-claro mb-6 tracking-tight relative z-10"
+        >
+          Nuestra Visión
+        </h3>
+
+        <p
+          class="text-lg text-gris-claro leading-relaxed font-sans relative z-10"
+        >
+          Ser un referente nacional en compostaje, reconocidos por valorar
+          residuos mediante disposición final certificada, convirtiéndolos en
+          recursos valiosos que enriquecen el suelo y promueven la agricultura
+          sostenible.
         </p>
       </div>
-
     </div>
   </div>
 </section>

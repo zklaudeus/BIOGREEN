@@ -2,108 +2,218 @@
 // src/components/CertificadoDeTraza.astro
 ---
 
-<section id="certificado-trazabilidad" class="py-24 bg-gris-claro relative overflow-hidden">
+<section
+  id="certificado-trazabilidad"
+  class="py-24 bg-gris-claro relative overflow-hidden"
+>
   <!-- Fondo decorativo -->
-  <div class="absolute top-0 right-0 w-1/2 h-full bg-gris-claro rounded-l-[100px] opacity-50 -z-10 hidden lg:block"></div>
-  <div class="absolute -left-20 bottom-10 w-72 h-72 bg-verde/10 rounded-full filter blur-3xl opacity-40 pointer-events-none"></div>
+  <div
+    class="absolute top-0 right-0 w-1/2 h-full bg-gris-claro rounded-l-[100px] opacity-50 -z-10 hidden lg:block"
+  >
+  </div>
+  <div
+    class="absolute -left-20 bottom-10 w-72 h-72 bg-verde/10 rounded-full filter blur-3xl opacity-40 pointer-events-none"
+  >
+  </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-      
       <!-- Lado Izquierdo: Visual del Certificado -->
-      <div class="w-full lg:w-5/12 flex justify-center lg:justify-end order-2 lg:order-1">
+      <div
+        class="w-full lg:w-5/12 flex justify-center lg:justify-end order-2 lg:order-1"
+      >
         <div class="relative w-full max-w-sm">
           <!-- Tarjeta del certificado -->
-          <div class="bg-gris-claro border text-center p-8 rounded-3xl shadow-2xl relative z-10 border-verde-oscuro/20 transform rotate-[-2deg] transition-transform hover:rotate-0 duration-500">
-            <div class="w-20 h-20 mx-auto bg-gris-claro text-verde rounded-full flex items-center justify-center mb-6 shadow-inner">
-              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+          <div
+            class="bg-gris-claro border text-center p-8 rounded-3xl shadow-2xl relative z-10 border-verde-oscuro/20 transform rotate-[-2deg] transition-transform hover:rotate-0 duration-500"
+          >
+            <div
+              class="w-20 h-20 mx-auto bg-gris-claro text-verde rounded-full flex items-center justify-center mb-6 shadow-inner"
+            >
+              <svg
+                class="w-10 h-10"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                ></path>
               </svg>
             </div>
-            <h4 class="text-xl font-bold text-verde-oscuro mb-2 font-serif">BIOGREEN</h4>
-            <p class="text-xs text-verde-oscuro/50 uppercase tracking-widest mb-6 border-b border-verde-oscuro/20 pb-4">Certificado Oficial</p>
+            <h4 class="text-xl titulo-secundario text-verde-oscuro mb-2">
+              BIOGREEN
+            </h4>
+            <p
+              class="text-xs font-title text-verde-oscuro/50 uppercase tracking-widest mb-6 border-b border-verde-oscuro/20 pb-4"
+            >
+              Certificado Oficial
+            </p>
             <div class="space-y-3 text-left">
               <div class="h-2 bg-gris-claro rounded-full w-3/4"></div>
               <div class="h-2 bg-gris-claro rounded-full w-full"></div>
               <div class="h-2 bg-gris-claro rounded-full w-5/6"></div>
             </div>
-            <div class="mt-8 flex justify-between items-end border-t border-verde-oscuro/20 pt-4">
-              <div class="text-left">
+            <div
+              class="mt-8 flex justify-between items-end border-t border-verde-oscuro/20 pt-4"
+            >
+              <div class="text-left titulo-secundario">
                 <p class="text-[10px] text-verde-oscuro/40">Emisión</p>
-                <p class="text-xs font-semibold text-verde-oscuro">Mensual</p>
+                <p class="text-xs text-verde-oscuro">Mensual</p>
               </div>
               <div class="w-12 h-12">
                 <!-- Sello decorativo -->
-                <svg viewBox="0 0 100 100" class="w-full h-full text-verde opacity-80" fill="currentColor">
-                  <path d="M50 0 L58 15 L74 15 L78 30 L93 35 L88 50 L93 65 L78 70 L74 85 L58 85 L50 100 L42 85 L26 85 L22 70 L7 65 L12 50 L7 35 L22 30 L26 15 L42 15 Z" fill="#d1fae5"/>
-                  <circle cx="50" cy="50" r="25" fill="#0bb580"/>
-                  <path d="M42 50 L48 56 L60 42" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <svg
+                  viewBox="0 0 100 100"
+                  class="w-full h-full text-verde opacity-80"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M50 0 L58 15 L74 15 L78 30 L93 35 L88 50 L93 65 L78 70 L74 85 L58 85 L50 100 L42 85 L26 85 L22 70 L7 65 L12 50 L7 35 L22 30 L26 15 L42 15 Z"
+                    fill="#d1fae5"></path>
+                  <circle cx="50" cy="50" r="25" fill="#0bb580"></circle>
+                  <path
+                    d="M42 50 L48 56 L60 42"
+                    stroke="white"
+                    stroke-width="6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    fill="none"></path>
                 </svg>
               </div>
             </div>
           </div>
           <!-- Sombra decorativa detrás -->
-          <div class="absolute inset-0 bg-verde rounded-3xl transform rotate-[4deg] translate-x-2 translate-y-2 -z-10 opacity-10"></div>
+          <div
+            class="absolute inset-0 bg-verde rounded-3xl transform rotate-[4deg] translate-x-2 translate-y-2 -z-10 opacity-10"
+          >
+          </div>
         </div>
       </div>
 
       <!-- Lado Derecho: Contenido -->
       <div class="w-full lg:w-7/12 order-1 lg:order-2">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm font-bold tracking-wide mb-6">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
+        >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 5a.75.75 0 00-1.5 0v4.25h-2.5a.75.75 0 000 1.5h3.25a.75.75 0 00.75-.75V7z" clip-rule="evenodd"/>
+            <path
+              fill-rule="evenodd"
+              d="M10 2a8 8 0 100 16 8 8 0 000-16zm.75 5a.75.75 0 00-1.5 0v4.25h-2.5a.75.75 0 000 1.5h3.25a.75.75 0 00.75-.75V7z"
+              clip-rule="evenodd"></path>
           </svg>
           Garantía y Respaldo
         </div>
 
-        <h2 class="text-4xl md:text-5xl font-black text-verde-oscuro tracking-tight leading-tight mb-6">
-          Certificado de<br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-verde-oscuro to-green-500">Trazabilidad</span>
+        <h2
+          class="text-4xl md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-6"
+        >
+          Certificado de<br />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-verde-oscuro to-green-500"
+            >Trazabilidad</span
+          >
         </h2>
 
-        <p class="text-lg text-verde-oscuro leading-relaxed font-light mb-10">
-          En <strong class="font-semibold text-verde-oscuro">BIOGREEN</strong> entregamos certificados de trazabilidad que acreditan el destino final de los residuos orgánicos de tu empresa. Con este respaldo, ayudamos a tu organización a lograr metas clave:
+        <p class="text-lg text-verde-oscuro leading-relaxed font-sans mb-10">
+          En <strong class="font-sans text-verde-oscuro">BIOGREEN</strong> entregamos
+          certificados de trazabilidad que acreditan el destino final de los residuos
+          orgánicos de tu empresa. Con este respaldo, ayudamos a tu organización a
+          lograr metas clave:
         </p>
 
         <ul class="space-y-6">
           <li class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                ></path>
               </svg>
             </div>
             <div>
-              <h4 class="text-xl font-bold text-verde-oscuro">Cumplir la normativa</h4>
-              <p class="text-verde-oscuro/60 mt-1 font-light">Dar cumplimiento a la normativa ambiental vigente y gestionar adecuadamente informes sectoriales.</p>
+              <h4 class="text-xl titulo-secundario text-verde-oscuro">
+                Cumplir la normativa
+              </h4>
+              <p class="text-verde-oscuro/60 mt-1 font-sans">
+                Dar cumplimiento a la normativa ambiental vigente y gestionar
+                adecuadamente informes sectoriales.
+              </p>
             </div>
           </li>
 
           <li class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 15h17.25M5.625 15v3.75m12.75-3.75v3.75m-15.75-9h19.5m-19.5 0v-2.25A2.25 2.25 0 015.625 3h12.75a2.25 2.25 0 012.25 2.25v2.25m-19.5 0V15" />
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.375 15h17.25M5.625 15v3.75m12.75-3.75v3.75m-15.75-9h19.5m-19.5 0v-2.25A2.25 2.25 0 015.625 3h12.75a2.25 2.25 0 012.25 2.25v2.25m-19.5 0V15"
+                ></path>
               </svg>
             </div>
             <div>
-              <h4 class="text-xl font-bold text-verde-oscuro">Reducir huella de carbono</h4>
-              <p class="text-verde-oscuro/60 mt-1 font-light">Disminuir activamente la huella de carbono generada en tus operaciones y procesos productivos.</p>
+              <h4 class="text-xl titulo-secundario text-verde-oscuro">
+                Reducir huella de carbono
+              </h4>
+              <p class="text-verde-oscuro/60 mt-1 font-sans">
+                Disminuir activamente la huella de carbono generada en tus
+                operaciones y procesos productivos.
+              </p>
             </div>
           </li>
 
           <li class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            <div
+              class="flex-shrink-0 w-10 h-10 rounded-full bg-gris-claro flex items-center justify-center text-verde mt-1"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                ></path>
               </svg>
             </div>
             <div>
-              <h4 class="text-xl font-bold text-verde-oscuro">Economía Circular</h4>
-              <p class="text-verde-oscuro/60 mt-1 font-light">Demostrar tu compromiso real con la economía circular y la sustentabilidad a largo plazo.</p>
+              <h4 class="text-xl titulo-secundario text-verde-oscuro">
+                Economía Circular
+              </h4>
+              <p class="text-verde-oscuro/60 mt-1 font-sans">
+                Demostrar tu compromiso real con la economía circular y la
+                sustentabilidad a largo plazo.
+              </p>
             </div>
           </li>
         </ul>
       </div>
-      
     </div>
   </div>
 </section>

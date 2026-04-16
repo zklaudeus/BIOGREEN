@@ -32,7 +32,7 @@ const links = [
           return (
           <a 
             href={link.href} 
-            class={`nav-link relative text-sm font-medium transition-colors duration-300 ${isActive ? 'text-verde font-bold' : ''}`}
+            class={`nav-link relative text-sm font-medium transition-colors duration-300 ${isActive ? 'text-verde font-sans' : ''}`}
             aria-current={isActive ? 'page' : undefined}
           >
             {link.name}
@@ -68,7 +68,7 @@ const links = [
         return (
         <a 
           href={link.href} 
-          class={`mobile-nav-link transition-colors duration-300 ${isActive ? 'text-verde font-bold' : 'text-verde-oscuro'}`}
+          class={`mobile-nav-link transition-colors duration-300 ${isActive ? 'text-verde font-sans' : 'text-verde-oscuro'}`}
           aria-current={isActive ? 'page' : undefined}
         >
           {link.name}

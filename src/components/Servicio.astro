@@ -72,7 +72,7 @@ const residuos = [
       <!-- Columna izquierda: Texto explicativo -->
       <div class="w-full lg:w-5/12 lg:sticky lg:top-28">
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm font-bold tracking-wide mb-6"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gris-claro text-verde-oscuro text-sm titulo-secundario tracking-wide mb-6"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
@@ -84,7 +84,7 @@ const residuos = [
         </div>
 
         <h2
-          class="text-4xl md:text-5xl font-black text-verde-oscuro tracking-tight leading-tight mb-6"
+          class="text-4xl md:text-5xl font-title text-verde-oscuro tracking-tight leading-tight mb-6"
         >
           Residuos<br />
           <span
@@ -93,7 +93,7 @@ const residuos = [
           >
         </h2>
 
-        <p class="text-lg text-verde-oscuro/60 leading-relaxed font-light mb-8">
+        <p class="text-lg text-verde-oscuro/60 leading-relaxed mb-8 font-sans">
           Contamos con autorización para recepcionar una amplia gama de residuos
           orgánicos no peligrosos compatibles con el proceso de compostaje
           industrial.
@@ -103,11 +103,11 @@ const residuos = [
         <div
           class="bg-gris-claro border-l-4 border-verde-oscuro/20 rounded-r-2xl p-6"
         >
-          <p class="text-sm text-verde-oscuro font-light leading-relaxed">
-            <span class="font-semibold">Importante:</span> Todos los residuos recepcionados
-            deben ser orgánicos, no peligrosos y compatibles con el proceso de compostaje.
-            El manejo se realiza conforme al <span class="font-semibold"
-              >Manual de Procedimientos autorizado.</span
+          <p class="text-sm text-verde-oscuro font-sans leading-relaxed">
+            <span class="titulo-secundario">Importante:</span> Todos los residuos
+            recepcionados deben ser orgánicos, no peligrosos y compatibles con el
+            proceso de compostaje. El manejo se realiza conforme al <span
+              class="font-title">Manual de Procedimientos autorizado.</span
             >
           </p>
         </div>
@@ -118,7 +118,7 @@ const residuos = [
         {
           residuos.map((categoria) => (
             <div class="group p-6 rounded-2xl border border-verde-oscuro/20 bg-gris-claro shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-verde-oscuro/20 transition-all duration-300">
-              <h3 class="text-xl font-bold text-verde-oscuro mb-4 group-hover:text-verde-oscuro transition-colors duration-300">
+              <h3 class="text-xl font-title text-verde-oscuro mb-4 group-hover:text-verde-oscuro transition-colors duration-300">
                 {categoria.title}
               </h3>
               <ul class="space-y-3">
@@ -137,7 +137,7 @@ const residuos = [
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span class="text-verde-oscuro font-medium leading-snug">
+                    <span class="text-verde-oscuro leading-snug font-sans">
                       {item}
                     </span>
                   </li>

@@ -72,120 +72,46 @@ const positions = pasos.map((_, i) => {
   <!-- Fondo decorativo -->
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-10 left-10 w-72 h-72 bg-gris-claro rounded-full filter blur-3xl opacity-40"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-40"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-verde/10 rounded-full filter blur-3xl opacity-40"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
     <!-- Encabezado -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="subtitulo text-sm font-bold text-verde mb-3">Nuestro Proceso</h2>
-      <h3 class="text-4xl md:text-5xl font-black text-verde-oscuro mb-6 tracking-tight">¿Cómo lo hacemos?</h3>
+      <h2 class=" text-sm titulo-secundario text-verde mb-3">Nuestro Proceso</h2>
+      <h3 class="text-4xl md:text-5xl font-title text-verde-oscuro mb-6 tracking-tight">¿Cómo lo hacemos?</h3>
       <div class="w-24 h-1.5 bg-verde mx-auto rounded-full"></div>
-      <p class="mt-6 text-lg text-verde-oscuro/60 font-light leading-relaxed">
+      <p class="mt-6 text-lg text-verde-oscuro/60 font-sans leading-relaxed">
         Un ciclo continuo que transforma residuos en recursos, devolviendo valor a la tierra.
       </p>
     </div>
 
-    <!-- Layout: ciclo (desktop) + lista (mobile) -->
-    <div class="flex flex-col lg:flex-row items-center gap-16">
+    <!-- Layout: imagen arriba en mobile, lado a lado en desktop -->
+    <div class="flex flex-col xl:flex-row items-center gap-10 xl:gap-16">
 
       <!-- CICLO VISUAL -->
-      <div class="w-full lg:w-1/2 flex items-center justify-center">
-        <div class="cycle-container relative" style="width: min(480px, 90vw); height: min(480px, 90vw);">
-
-          <!-- SVG de flechas circulares -->
-          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Círculo guía punteado -->
-            <circle cx="50" cy="50" r="38" stroke="#d1fae5" stroke-width="0.5" stroke-dasharray="2 2"/>
-
-            <!-- Arcos entre cada nodo con flecha -->
-            {positions.map((pos, i) => {
-              const next = positions[(i + 1) % positions.length];
-              // Arco curvado usando un punto de control ligeramente hacia el centro
-              const mx = (pos.x + next.x) / 2;
-              const my = (pos.y + next.y) / 2;
-              // Desplazar el punto medio hacia el centro para hacer la curva
-              const cx2 = mx + (centerX - mx) * 0.15;
-              const cy2 = my + (centerY - my) * 0.15;
-              const id = `arrow-${i}`;
-              return (
-                <g>
-                  <defs>
-                    <marker id={id} markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto">
-                      <path d="M0,0 L4,2 L0,4 Z" fill="#0bb580"/>
-                    </marker>
-                  </defs>
-                  <path
-                    d={`M ${pos.x} ${pos.y} Q ${cx2} ${cy2} ${next.x} ${next.y}`}
-                    stroke="#0bb580"
-                    stroke-width="0.8"
-                    stroke-dasharray="3 1.5"
-                    marker-end={`url(#${id})`}
-                    opacity="0.7"
-                  />
-                </g>
-              );
-            })}
-
-            <!-- Círculo central -->
-            <circle cx="50" cy="50" r="12" fill="url(#centerGrad)" />
-            <defs>
-              <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0bb580"/>
-                <stop offset="100%" stop-color="#002424"/>
-              </radialGradient>
-            </defs>
-          </svg>
-
-          <!-- Icono central -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-verde-oscuro to-green-600 flex items-center justify-center shadow-xl shadow-verde-oscuro/10 cycle-spin">
-              <svg class="w-8 h-8 md:w-10 md:h-10 text-gris-claro" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Nodos del ciclo -->
-          {pasos.map((paso, i) => {
-            const pos = positions[i];
-            return (
-              <div
-                class={`cycle-node absolute transform -translate-x-1/2 -translate-y-1/2 group cursor-default`}
-                style={`left: ${pos.x}%; top: ${pos.y}%;`}
-              >
-                <!-- Círculo del nodo -->
-                <div class={`w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${paso.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 ring-4 ring-white`}>
-                  <div class="w-7 h-7 md:w-8 md:h-8 text-gris-claro [&>svg]:w-full [&>svg]:h-full" set:html={paso.icon}></div>
-                </div>
-                <!-- Número -->
-                <div class="absolute -top-1 -right-1 w-5 h-5 bg-verde-oscuro text-gris-claro rounded-full flex items-center justify-center">
-                  <span class="text-gris-claro text-[9px] font-black">{i + 1}</span>
-                </div>
-                <!-- Tooltip label -->
-                <div class="absolute left-1/2 -translate-x-1/2 mt-2 top-full whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-20">
-                  <span class="block bg-verde-oscuro text-gris-claro text-gris-claro text-xs font-semibold px-3 py-1.5 rounded-lg shadow-xl">{paso.titulo}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      <div class="w-full xl:w-full flex items-center justify-center">
+        <img
+          src="/images/ciclo.png"
+          alt="Ciclo de compostaje BIOGREEN"
+          class="w-full max-w-xs sm:max-w-sm md:max-w-md xl:max-w-full object-contain drop-shadow-xl mx-auto"
+        />
       </div>
 
       <!-- LISTA DE PASOS -->
-      <div class="w-full lg:w-1/2">
-        <ol class="space-y-5">
+      <div class="w-full xl:w-1/2">
+        <ol class="space-y-4">
           {pasos.map((paso, i) => (
-            <li class={`group flex items-start gap-5 p-5 rounded-2xl border ${paso.border} ${paso.bg} hover:shadow-lg transition-all duration-300`}>
+            <li class={`group flex items-start gap-4 p-4 sm:p-5 rounded-2xl border ${paso.border} ${paso.bg} hover:shadow-lg transition-all duration-300`}>
               <!-- Número -->
-              <div class={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${paso.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <span class="text-gris-claro text-sm font-black">{paso.numero}</span>
+              <div class={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${paso.color} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                <span class="text-gris-claro text-xs sm:text-sm font-title">{paso.numero}</span>
               </div>
               <!-- Contenido -->
               <div>
-                <h4 class="text-base font-bold text-verde-oscuro mb-1">{paso.titulo}</h4>
-                <p class="text-sm text-verde-oscuro/60 leading-relaxed font-light">{paso.descripcion}</p>
+                <h4 class="text-sm sm:text-base font-title text-verde-oscuro mb-0.5">{paso.titulo}</h4>
+                <p class="text-xs sm:text-sm text-verde-oscuro/60 leading-relaxed font-sans">{paso.descripcion}</p>
               </div>
             </li>
           ))}
