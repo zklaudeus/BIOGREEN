@@ -8,16 +8,17 @@ import heroBg from "../assets/images/hero-bg-2.jpg";
   id="inicio"
   class="relative min-h-screen flex items-center justify-center bg-verde-oscuro text-gris-claro text-gris-claro pt-20"
 >
-  <!-- Imagen de fondo -->
+  <!-- Imagen de fondo con optimización -->
   <div class="absolute inset-0 z-0">
     <Image
       src={heroBg}
       alt="Fondo de campo verde BioGreen"
-      class="w-full h-full object-cover object-center"
+      class="w-full h-full object-cover object-center landscape:object-[center_30%]"
       loading="eager"
     />
-    <!-- Overlay oscuro para legibilidad -->
-    <div class="absolute inset-0 bg-verde-oscuro/20"></div>
+    <!-- Duo-Overlay para profundidad y legibilidad -->
+    <div class="absolute inset-0 bg-verde-oscuro/40 md:bg-verde-oscuro/30 transition-colors duration-500"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-verde-oscuro/80 via-transparent to-verde-oscuro/20"></div>
   </div>
 
   <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
