@@ -2,7 +2,7 @@
 // src/components/Contact.astro
 ---
 
-<section id="contacto" class="py-24 bg-gris-claro relative">
+<section id="contacto" class="py-24 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <!-- Contact Info -->
@@ -21,7 +21,7 @@
           <!-- Item 1 -->
           <div class="flex items-start group">
             <div
-              class="flex-shrink-0 w-14 h-14 bg-gris-claro text-verde rounded-full flex items-center justify-center border border-verde-oscuro/20 group-hover:bg-verde group-hover:text-gris-claro transition-colors duration-300"
+              class="flex-shrink-0 w-14 h-14 border border-verde-oscuro/20 text-verde rounded-full flex items-center justify-center group-hover:bg-verde group-hover:text-gris-claro transition-colors duration-300"
             >
               <svg
                 class="w-7 h-7"
@@ -121,7 +121,7 @@
 
       <!-- Contact Form -->
       <div
-        class="bg-gris-claro p-8 md:p-10 rounded-3xl shadow-lg border border-verde-oscuro/20 h-fit"
+        class="p-8 md:p-10 rounded-3xl shadow-lg border border-verde-oscuro/20 h-fit"
         id="form-container"
       >
         <h3
@@ -169,7 +169,7 @@
               id="name"
               name="name"
               required
-              class="w-full rounded-xl border-verde-oscuro/20 shadow-sm focus:border-verde-oscuro/20 focus:border-verde-oscuro/20 bg-gris-claro py-3.5 px-4 border outline-none transition-all"
+              class="w-full rounded-xl border-verde-oscuro/20 shadow-sm focus:border-verde-oscuro/20 focus:border-verde-oscuro/20 py-3.5 px-4 border outline-none transition-all"
               placeholder="Ej. Juan Pérez"
             />
           </div>
@@ -184,7 +184,7 @@
               id="email"
               name="email"
               required
-              class="w-full rounded-xl border-verde-oscuro/20 shadow-sm focus:border-verde-oscuro/20 focus:border-verde-oscuro/20 bg-gris-claro py-3.5 px-4 border outline-none transition-all"
+              class="w-full rounded-xl border-verde-oscuro/20 shadow-sm focus:border-verde-oscuro/20 focus:border-verde-oscuro/20 py-3.5 px-4 border outline-none transition-all"
               placeholder="juan@ejemplo.com"
             />
           </div>
@@ -284,7 +284,7 @@
               result.innerHTML =
                 "¡Mensaje enviado con éxito! Te contactaremos pronto.";
               result.classList.remove("hidden");
-              result.classList.add("bg-gris-claro", "text-verde-oscuro");
+              result.classList.add("bg-white", "text-verde-oscuro", "border", "border-verde-oscuro/10");
             }
             (form as HTMLFormElement).reset();
           } else {
@@ -314,7 +314,7 @@
 
           // Ocultar el mensaje de éxito después de 5 segundos
           setTimeout(() => {
-            if (result && result.classList.contains("bg-gris-claro")) {
+            if (result && result.classList.contains("bg-white")) {
               result.classList.add("hidden");
             }
           }, 5000);

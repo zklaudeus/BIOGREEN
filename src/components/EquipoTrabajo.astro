@@ -2,6 +2,7 @@
 // src/components/EquipoTrabajo.astro
 import { Image } from 'astro:assets';
 import joaquinImg from '../assets/images/joaquin.jpg';
+import gonzaloImg from "../assets/images/gonzalo.webp"
 
 const equipo = [
   {
@@ -11,7 +12,8 @@ const equipo = [
     telefono: "+56 9 8230 3729",
     profesion: "Ingeniero Civil Industrial e Ingeniero Ambiental",
     instagram: "biogreen_cl",
-    foto: null,
+    foto: gonzaloImg,
+    posicion: "object-left",
   },
   {
     nombre: "Joaquín Vargas Alarcón",
@@ -21,6 +23,7 @@ const equipo = [
     profesion: "Ingeniero Comercial",
     instagram: "biogreen_cl",
     foto: joaquinImg,
+    posicion: "object-top",
   },
   {
     nombre: "Miguel Angel Silva Stuardo",
@@ -41,9 +44,9 @@ const equipo = [
 ];
 ---
 
-<section id="equipo" class="py-24 bg-gris-claro relative overflow-hidden">
+<section id="equipo" class="py-24 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute right-0 bottom-0 w-96 h-96 bg-gris-claro rounded-full mix-blend-multiply filter blur-3xl opacity-40 translate-x-1/3 translate-y-1/3"></div>
+    <div class="absolute right-0 bottom-0 w-96 h-96 bg-verde/5 rounded-full mix-blend-multiply filter blur-3xl opacity-40 translate-x-1/3 translate-y-1/3"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -58,7 +61,7 @@ const equipo = [
     <!-- Tarjetas del equipo -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
       {equipo.map(persona => (
-        <div class="bg-gris-claro rounded-[2rem] shadow-xl border border-verde-oscuro/20 overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+        <div class="rounded-[2rem] shadow-xl border border-verde-oscuro/20 overflow-hidden group hover:-translate-y-2 transition-all duration-500">
 
           <!-- Cabecera de color -->
           <div class="bg-gradient-to-br from-verde-oscuro to-verde pt-10 pb-6 px-8 relative overflow-hidden flex flex-col items-center text-center">
@@ -71,16 +74,16 @@ const equipo = [
                 ? <Image
                     src={persona.foto}
                     alt={persona.nombre}
-                    class="w-full h-full object-cover object-top"
+                    class={`w-full h-full object-cover ${persona.posicion || 'object-top'}`}
                   />
-                : <div class="w-full h-full bg-gris-claro/20 backdrop-blur-sm flex items-center justify-center">
+                : <div class="w-full h-full bg-verde/10 backdrop-blur-sm flex items-center justify-center">
                     <span class="text-4xl font-sans text-gris-claro">{persona.nombre.charAt(0)}</span>
                   </div>
               }
             </div>
 
             <h4 class="text-gris-claro text-xl font-sans leading-tight mb-2 relative z-10">{persona.nombre}</h4>
-            <span class="inline-block bg-gris-claro/20 text-gris-claro text-xs titulo-secundario px-4 py-1.5 rounded-full border border-white/20 tracking-widest uppercase relative z-10">
+            <span class="inline-block bg-white/20 text-gris-claro text-xs titulo-secundario px-4 py-1.5 rounded-full border border-white/20 tracking-widest uppercase relative z-10">
               {persona.cargo}
             </span>
           </div>
@@ -91,7 +94,7 @@ const equipo = [
             <!-- Profesión -->
             {persona.profesion && (
               <div class="flex items-start gap-4 group/item">
-                <div class="w-10 h-10 bg-gris-claro text-verde rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-verde group-hover/item:text-gris-claro transition-colors duration-300">
+                <div class="w-10 h-10 border border-verde-oscuro/10 text-verde rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:bg-verde group-hover/item:text-gris-claro transition-colors duration-300">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
                   </svg>
@@ -112,7 +115,7 @@ const equipo = [
               </div>
               <div>
                 <p class="text-xs font-sans text-gray-400 uppercase tracking-wide mb-0.5">Correo</p>
-                <a href={`mailto:${persona.email}`} class="text-verde-oscuro hover:text-verde font-sans text-sm transition-colors break-all">{persona.email}</a>
+                <a href={`mailto:${persona.email}`} class="text-verde-oscuro hover:text-verde font-sans text-sm transition-colors break-words">{persona.email}</a>
               </div>
             </div>
 
